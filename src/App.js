@@ -11,6 +11,7 @@ import Blog from './Pages/Blog/Blog';
 import MyReviews from './Pages/MyReviews/MyReviews';
 import AddService from './Pages/AddService/AddService';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute'
+import NotFound from './Pages/NotFound/NotFound'
 
 function App() {
   const router = createBrowserRouter([
@@ -54,6 +55,10 @@ function App() {
         {
           path: '/signup',
           element: <SignUp></SignUp>
+        },
+        {
+          path:'/*',
+          element:<NotFound></NotFound>
         }
       ]
     }
