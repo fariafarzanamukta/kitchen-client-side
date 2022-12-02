@@ -11,7 +11,7 @@ const AddService = () => {
         const img = form.img.value;
         const food_details = form.details.value;
 
-        const service={
+        const service = {
             foodName,
             price,
             img,
@@ -39,7 +39,7 @@ const AddService = () => {
     }
     return (
         <div className='max-w-screen-xl mx-auto '>
-            <h1>Add New Food</h1>
+            <h1 className='text-3xl font-bold text-center mt-6 mb-2'>Add New Food</h1>
             <div className='max-w-screen-xl mx-auto'>
                 <form onSubmit={handleAddService}>
                     <div className="form-control w-full max-w-xs">
