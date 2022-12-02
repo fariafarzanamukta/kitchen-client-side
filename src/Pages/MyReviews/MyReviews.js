@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { FaStar } from 'react-icons/fa';
 import { AuthContext } from '../../context/AuthProvider';
+import Loading from '../../Loading/Loading';
 
 const MyReviews = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -31,7 +32,9 @@ const MyReviews = () => {
             });
     }, [user?.uid, loading, logOut]);
 
-
+    if (loading) {
+        return <Loading></Loading>
+    }
     const handleDelete = id => {
         fetch(`https://farias-cloud-kitchen.onrender.com/reviews/${id}`, {
             method: 'DELETE'

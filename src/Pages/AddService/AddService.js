@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
+import { AuthContext } from '../../context/AuthProvider';
+import Loading from '../../Loading/Loading';
 
 const AddService = () => {
-
+    const { loading } = useContext(AuthContext)
     const handleAddService = e => {
         e.preventDefault();
         const form = e.target;
@@ -36,6 +38,9 @@ const AddService = () => {
                 toast.error("Service Not Added");
             });
 
+    }
+    if (loading) {
+        return <Loading></Loading>
     }
     return (
         <div className='max-w-screen-xl mx-auto '>
