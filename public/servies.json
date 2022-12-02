@@ -1,0 +1,38 @@
+[
+   {
+    "foodName":"Baked-Chicken-Wings",
+    "price":"380",
+    "img":"https://i.ibb.co/NszCj1Y/baked-chicken-wings-asian-style-tomatoes-sauce-plate.jpg",
+    "food_details":"Baked chicken wings are so easy to make, and they come out of the oven crispy and delicious. There's no need for flour!Simply bake them in a 400°F oven for 40 minutes. And if you want them extra-crispy, leave them in a warm oven for 30-60 more minutes."
+   },
+   {
+    "foodName":"Dahi-puri-chat",
+    "price":"210",
+    "img":"https://i.ibb.co/v1kKrv1/dahi-puri-chat-is-indian-road-side-snack-item-which-is-especially-popular-state-maharashtra-india.jpg",
+    "food_details":"Dahi puri is an Indian snack food which is especially popular in the state of Maharashtra. The dish is a type of chaat and originates from the city of Mumbai. It is served with mini-puri shells, which are also used for the dish pani puri. Dahi puri and pani puri chaats are often sold from the same vendor"
+   },
+   {
+    "foodName":"Sub Sandwich",
+    "price":"380",
+    "img":"https://i.ibb.co/h2ZQ74c/sub.jpg",
+    "food_details":"A submarine sandwich, commonly known as a sub, hoagie, hero, Italian, grinder, wedge, or a spuckie, is a type of American cold or hot sandwich made from a cylindrical bread roll split lengthwise and filled with meats, cheeses, vegetables, and condiments. It has many different names."
+   },
+   {
+    "foodName":"Burger",
+    "price":"320",
+    "img":"https://i.ibb.co/YcktwHk/front-view-burger-fries-plate.jpg",
+    "food_details":"A hamburger, or simply burger, is a food consisting of fillings—usually a patty of ground meat, typically beef—placed inside a sliced bun or bread roll."
+   },
+   {
+    "foodName":"Masala Widges",
+    "price":"380",
+    "img":"https://i.ibb.co/tK70PvS/masala-wedges.jpg",
+    "food_details":"Potato wedges are irregular wedge-shaped slices of potato, often large and unpeeled, that are either baked or fried. They are sold at diners and fast food restaurants"
+   },
+   {
+    "foodName":"Fries",
+    "price":"200",
+    "img":"https://i.ibb.co/zrZcDLh/fries.jpg",
+    "food_details":"French fries, chips, finger chips, french-fried potatoes, or simply fries, are batonnet or allumette-cut deep-fried potatoes of disputed origin from Belgium and France. They are prepared by cutting potatoes into even strips, drying them, and frying them, usually in a deep fryer. "
+   }
+]

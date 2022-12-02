@@ -1,0 +1,78 @@
+import React from 'react';
+import toast from 'react-hot-toast';
+
+const AddService = () => {
+
+    const handleAddService = e => {
+        e.preventDefault();
+        const form = e.target;
+        const foodName = form.foodname.value;
+        const price = form.price.value;
+        const img = form.img.value;
+        const food_details = form.details.value;
+
+        const service={
+            foodName,
+            price,
+            img,
+            food_details
+        }
+        console.log(service);
+        fetch('http://localhost:5000/services', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(service)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    form.reset();
+                    toast.success("Service Added Successfully");
+                }
+            })
+            .catch(er => {
+                toast.error("Service Not Added");
+            });
+
+    }
+    return (
+        <div className='max-w-screen-xl mx-auto '>
+            <h1>Add New Food</h1>
+            <div className='max-w-screen-xl mx-auto'>
+                <form onSubmit={handleAddService}>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="label-text">Food Name</span>
+                        </label>
+                        <input name='foodname' type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+
+                        <label className="label">
+                            <span className="label-text">Price</span>
+                        </label>
+                        <input name='price' type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+
+                        <label className="label">
+                            <span className="label-text">Food Image Url</span>
+                        </label>
+                        <input name='img' type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+
+                        <label className="label">
+                            <span className="label-text">Food Details</span>
+                        </label>
+                        <input name='details' type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+
+
+
+                    </div>
+                    <button className='btn btn-primary my-3' type="submit">
+                        Add New Service
+                    </button>
+                </form>
+            </div>
+        </div>
+    );
+};
+
+export default AddService;
