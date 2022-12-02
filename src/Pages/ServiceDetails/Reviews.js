@@ -55,12 +55,12 @@ const Reviews = ({ review, setLoading }) => {
     }
     return (
         <div className='mt-5 px-4'>
-
+          
             <article>
                 <div className="flex items-center mb-3 space-x-4">
                     <img className="w-10 h-10 rounded-full" src={review?.reviewer_info.userPhoto} alt="" />
                     <div className="space-y-1 font-medium dark:text-white">
-                        <p className='text-2xl '>{review?.reviewer_info.userName} <span className="block text-sm text-gray-50">{review?.reviewer_info.userEmail}</span></p>
+                        <p className='text-2xl '>{review?.reviewer_info.userName} <span className="block text-sm">{review?.reviewer_info.userEmail}</span></p>
                     </div>
                 </div>
                 <div className="mb-1">

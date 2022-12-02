@@ -84,15 +84,12 @@ const ServiceDetails = () => {
                         <h2 className="text-3xl font-bold text-center">{serviceDetails?.foodName}</h2>
                         <p><span>৳</span> {serviceDetails?.price} BDT </p>
                         <p>{serviceDetails?.food_details}</p>
-                        <div className="card-actions justify-end">
-                            {/* <Link to={`/service/${id}`}>
 
-                            <button className="btn btn-primary">Buy Now</button>
-                        </Link> */}
-                        </div>
                     </div>
                 </div>
+
                 <div className='card card-compact bg-base-100 shadow-xl my-2'>
+                    <h1 className='text-center text-2xl font-bold mt-6'>Reviews Of This Food</h1>
                     <div className={!(serviceReviews.length <= 0) ? 'hidden' : 'block'}>
                         <p className='text-2xl font-semibold text-gray-500 text-center mt-12 mb-12'>No Reviews Yet Added</p>
                     </div>
@@ -109,6 +106,7 @@ const ServiceDetails = () => {
                     </div>
 
                     <div>
+
                         <form onSubmit={handleSubmitReview} >
                             <div className="card-actions justify-end">
                                 {/* The button to open modal */}
@@ -120,7 +118,7 @@ const ServiceDetails = () => {
                                     <div className="modal-box relative">
 
 
-                                        <input name="user" type="text" defaultValue={user?.displayName} disabled placeholder="Your Name" className="input w-full input-bordered my-1" required/>
+                                        <input name="user" type="text" defaultValue={user?.displayName} disabled placeholder="Your Name" className="input w-full input-bordered my-1" required />
 
                                         <input name="email" type="email" defaultValue={user?.email} disabled placeholder="Email Address" className="input w-full input-bordered my-1" />
 

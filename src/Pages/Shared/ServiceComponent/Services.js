@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import Service from './Service';
-
+import Loading from '../../../Loading/Loading'
 
 const Services = ({ datasize }) => {
     const [foodDetails, setFoodDetails] = useState([]);
@@ -21,6 +21,9 @@ const Services = ({ datasize }) => {
                 toast.error(err.message)
             })
     }, [datasize]);
+    if(loading){
+        return <Loading></Loading>
+    }
 
     return (
         <div>
