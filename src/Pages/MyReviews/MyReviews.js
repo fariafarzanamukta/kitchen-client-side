@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
+import { FaStar } from 'react-icons/fa';
 import { AuthContext } from '../../context/AuthProvider';
 
 const MyReviews = () => {
@@ -51,14 +52,14 @@ const MyReviews = () => {
     return (
         <div className='max-w-screen-xl mx-auto'>
             <div className="overflow-x-auto">
-                <table className="table table-zebra w-full">
+                <table className="table table-zebra w-full my-6">
 
                     <thead>
                         <tr>
                             <th></th>
                             <th>Food Name</th>
                             <th>Ratting</th>
-                            <th>Acction</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -67,7 +68,7 @@ const MyReviews = () => {
                                 <tr key={user._id}>
                                     <th>{index + 1}</th>
                                     <td>{reviews?.service_name}</td>
-                                    <td>{reviews?.rating_value}</td>
+                                    <td><span className='flex items-center'>{reviews?.rating_value}<FaStar className='ml-1 text-yellow-300'></FaStar></span></td>
                                     <td>
                                         <button onClick={() => handleDelete(reviews._id)} className='btn btn-primary'>Delete</button>
                                     </td>
