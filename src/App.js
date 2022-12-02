@@ -11,6 +11,7 @@ import { Toaster } from 'react-hot-toast';
 import Blog from './Pages/Blog/Blog';
 import MyReviews from './Pages/MyReviews/MyReviews';
 import AddService from './Pages/AddService/AddService';
+import PrivateRoute from './Pages/PrivateRoute/PrivateRoute'
 
 function App() {
   const router = createBrowserRouter([
@@ -28,12 +29,12 @@ function App() {
         },
         {
           path: '/service',
-          element: <ServiceSection></ServiceSection>
+          element: <PrivateRoute><ServiceSection></ServiceSection></PrivateRoute>
         },
         {
           path: '/service/:id',
-          loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`),
-          element: <ServiceDetails></ServiceDetails>
+          loader: ({ params }) => fetch(`https://farias-cloud-kitchen.onrender.com/services/${params.id}`),
+          element:<PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute> 
         },
         {
           path: '/blog',
@@ -41,11 +42,11 @@ function App() {
         },
         {
           path: '/myreviews',
-          element: <MyReviews></MyReviews>
+          element:<PrivateRoute> <MyReviews></MyReviews></PrivateRoute>
         },
         {
           path: '/addservice',
-          element: <AddService></AddService>
+          element: <PrivateRoute><AddService></AddService></PrivateRoute>
         },
         {
           path: '/login',

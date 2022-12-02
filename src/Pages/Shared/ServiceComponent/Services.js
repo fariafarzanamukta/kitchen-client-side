@@ -8,7 +8,7 @@ const Services = ({ datasize }) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const url = `http://localhost:5000/services${datasize?`?datasize=${datasize}` : ''}`
+        const url = `https://farias-cloud-kitchen.onrender.com/services${datasize ? `?datasize=${datasize}` : ''}`
         console.log(datasize);
         fetch(url)
             .then(res => res.json())
@@ -21,7 +21,7 @@ const Services = ({ datasize }) => {
                 toast.error(err.message)
             })
     }, [datasize]);
-    if(loading){
+    if (loading) {
         return <Loading></Loading>
     }
 

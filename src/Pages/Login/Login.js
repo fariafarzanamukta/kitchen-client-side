@@ -19,54 +19,54 @@ const Login = () => {
         const password = form.password.value;
 
         signIn(email, password)
-        .then(result => {
-            const user = result.user;
-            form.reset();
-            navigate(from, { replace: true });
-            const currentUser = {
-                uid: user.uid
-            }
-            fetch('http://localhost:5000/jwt', {
-                method: 'POST',
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify(currentUser)
-            })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                    localStorage.setItem('token', data.token);
-                    toast.success('Successfully Sign In')
-                    navigate(from, { replace: true });
+            .then(result => {
+                const user = result.user;
+                form.reset();
+                navigate(from, { replace: true });
+                const currentUser = {
+                    uid: user.uid
+                }
+                fetch('https://farias-cloud-kitchen.onrender.com/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
                 })
-        })
-        .catch(error => console.log(error));
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        localStorage.setItem('token', data.token);
+                        toast.success('Successfully Sign In')
+                        navigate(from, { replace: true });
+                    })
+            })
+            .catch(error => console.log(error));
     }
 
     const handleGoogleSignIn = () => {
         googleSignIn(googleProvider)
-        .then(result => {
-            const user = result.user;
-            const currentUser = {
-                uid: user.uid
-            }
-            fetch('http://localhost:5000/jwt', {
-                method: 'POST',
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify(currentUser)
-            })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                    localStorage.setItem('token', data.token);
-                    toast.success('Successfully Sign In')
-                    navigate(from, { replace: true });
+            .then(result => {
+                const user = result.user;
+                const currentUser = {
+                    uid: user.uid
+                }
+                fetch('https://farias-cloud-kitchen.onrender.com/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
                 })
-        })
-        .catch(error => console.log(error));
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        localStorage.setItem('token', data.token);
+                        toast.success('Successfully Sign In')
+                        navigate(from, { replace: true });
+                    })
+            })
+            .catch(error => console.log(error));
     }
 
     return (

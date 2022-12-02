@@ -9,7 +9,7 @@ const Reviews = ({ review, setLoading }) => {
             help_count: 1
         }
 
-        fetch(`http://localhost:5000/reviews-help/${review?._id}`, {
+        fetch(`https://farias-cloud-kitchen.onrender.com/reviews-help/${review?._id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
@@ -34,7 +34,7 @@ const Reviews = ({ review, setLoading }) => {
             abuse_count: 1
         }
 
-        fetch(`http://localhost:5000/reviews-abuse/${review._id}`, {
+        fetch(`https://farias-cloud-kitchen.onrender.com/reviews-abuse/${review._id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
@@ -55,7 +55,7 @@ const Reviews = ({ review, setLoading }) => {
     }
     return (
         <div className='mt-5 px-4'>
-          
+
             <article>
                 <div className="flex items-center mb-3 space-x-4">
                     <img className="w-10 h-10 rounded-full" src={review?.reviewer_info.userPhoto} alt="" />

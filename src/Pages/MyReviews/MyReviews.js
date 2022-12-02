@@ -9,7 +9,7 @@ const MyReviews = () => {
     const [reviewData, setReviewData] = useState([]);
 
     useEffect(() => {
-        const url = `http://localhost:5000/user-reviews/${user?.uid}`;
+        const url = `https://farias-cloud-kitchen.onrender.com/user-reviews/${user?.uid}`;
         fetch(url, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('token')}`
@@ -31,9 +31,9 @@ const MyReviews = () => {
             });
     }, [user?.uid, loading, logOut]);
 
-    
+
     const handleDelete = id => {
-        fetch(`http://localhost:5000/reviews/${id}`, {
+        fetch(`https://farias-cloud-kitchen.onrender.com/reviews/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
