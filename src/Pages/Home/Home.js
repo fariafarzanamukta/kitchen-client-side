@@ -10,9 +10,6 @@ const Home = ({ datasize }) => {
             <Banner></Banner>
             <ServiceHome datasize={datasize}></ServiceHome>
             <Popularity></Popularity>
-
-
-
         </div>
     );
 };
